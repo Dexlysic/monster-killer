@@ -238,7 +238,22 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
 function printLogHandler() {
   for (let i = 0; i < 3; i++) {
     console.log('--------');
-    // console.log(battleLog);
+  }
+  // for (let i = 10; i > 0;) {
+  //   i--;
+  //   console.log(i);
+  // }
+  // 
+  // for (let i = 0; i < 10; i++) {
+  //   console.log(battleLog[i]);
+  // }
+  let i = 0;
+  for (const logEntry of battleLog) {
+    console.log(`#${i}`);
+    i++;
+    for (const key in logEntry) {
+      console.log(`${key} ==> ${logEntry[key]}`);
+    }
   }
   console.log(battleLog);
 }
