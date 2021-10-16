@@ -10,7 +10,7 @@ const LOG_EVENT_PLAYER_STRONG_ATTACK = 'PLAYER_STRONG_ATTACK';
 const LOG_EVENT_MONSTER_ATTACK = 'MONSTER_ATTACK';
 const LOG_EVENT_PLAYER_HEAL = 'PLAYER_HEAL';
 const LOG_EVENT_GAME_OVER = 'GAME_OVER';
-const LOG_EVENT_BONUS_LIFE_USED = 'BONUS_LIFED_USED';
+const LOG_EVENT_BONUS_LIFE_USED = 'BONUS_LIFE_USED';
 
 const enteredLifeAmount = +prompt('Set maximum life:', 100);
 let battleLog = [];
@@ -180,6 +180,14 @@ function writeToLog(ev, val, monsterHealth, playerHealth) {
       };
       break;
     case LOG_EVENT_GAME_OVER:
+      logEntry = {
+        event: ev,
+        value: val,
+        finalMonsterHealth: monsterHealth,
+        finalPlayerHealth: playerHealth
+      };
+      break;
+    case LOG_EVENT_BONUS_LIFE_USED:
       logEntry = {
         event: ev,
         value: val,
